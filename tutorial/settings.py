@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u&_hb@a1m+g7$!*i&9hqdu9iu=tr@@bpwx1x&6wtwkidh0**fb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '101.236.3.242']
 
@@ -123,6 +123,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # # 加入下面的配置
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
