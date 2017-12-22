@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.schemas import get_schema_view
 # from django.conf.urls import include
+
+schema_view = get_schema_view(title='Pastebin API')
 
 urlpatterns = [
     path('', include('snippets.urls')),
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
+    path('schema/', schema_view),
 ]
