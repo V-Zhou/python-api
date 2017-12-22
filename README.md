@@ -1,7 +1,6 @@
 # Now go build awesome things.
 
-# python-api
-记录用python写api接口的各种项目
+---
 
 * 选择django的原因:
  1. django admin 能快速生成后台管理系统
